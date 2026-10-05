@@ -37,6 +37,14 @@ const EMAILJS_PUBLIC_KEY =
   process.env.EMAILJS_PUBLIC_KEY || '';
 
 /*
+   Private key (EmailJS -> Account -> General). Required when
+   Account -> Security has "Use Private Key (recommended)" enabled
+   (strict mode), otherwise EmailJS returns 403.
+*/
+const EMAILJS_PRIVATE_KEY =
+  process.env.EMAILJS_PRIVATE_KEY || '';
+
+/*
    EmailJS endpoint
 */
 const EMAILJS_API_URL =
@@ -119,6 +127,7 @@ async function emailJsRequest({
       service_id: EMAILJS_SERVICE_ID,
       template_id: EMAILJS_TEMPLATE_ID,
       user_id: EMAILJS_PUBLIC_KEY,
+      ...(EMAILJS_PRIVATE_KEY ? { accessToken: EMAILJS_PRIVATE_KEY } : {}),
 
       template_params: {
         to_email: to,
