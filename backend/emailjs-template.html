@@ -1,0 +1,22 @@
+<!--
+EmailJS template setup (dashboard.emailjs.com > Email Templates > Create New Template)
+  Subject:   {{subject}}
+  To Email:  {{to_email}}
+  From Name: Talisay City College
+  Content:   switch to the code editor (</>) and paste the HTML below.
+Variables used: to_name, reset_url, expires_in, subject, to_email
+-->
+<div style="font-family:Arial,Helvetica,sans-serif;max-width:480px;margin:0 auto;padding:24px;color:#1a1a1a;">
+  <h2 style="margin:0 0 16px;color:#0f5132;">Reset your password</h2>
+  <p>Hi {{to_name}},</p>
+  <p>We received a request to reset the password for your <strong>Talisay City College Management System</strong> account.</p>
+  <p style="margin:28px 0;">
+    <a href="{{reset_url}}" style="background:#1c8a4b;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;display:inline-block;">Reset Password</a>
+  </p>
+  <p style="color:#555;font-size:14px;">Or copy and paste this link into your browser:<br />
+    <a href="{{reset_url}}" style="color:#1c8a4b;word-break:break-all;">{{reset_url}}</a>
+  </p>
+  <p style="color:#555;font-size:14px;">This link expires in <strong>{{expires_in}}</strong>. If you didn't request this, you can safely ignore this email — your password won't be changed.</p>
+  <hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;" />
+  <p style="color:#999;font-size:12px;">Talisay City College Management System</p>
+</div>
